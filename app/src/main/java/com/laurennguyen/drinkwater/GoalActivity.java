@@ -18,7 +18,7 @@ public class GoalActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View view) {
-            double goal = Integer.valueOf(binding.etGoal.getText().toString());
+            double goal = Double.valueOf(binding.etGoal.getText().toString());
             Intent intent = new Intent();
             intent.putExtra(EXTRA_GOAL, goal);
             setResult(Activity.RESULT_OK, intent);
