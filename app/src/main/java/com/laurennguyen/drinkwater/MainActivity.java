@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.FileUtils;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.laurennguyen.drinkwater.databinding.ActivityMainBinding;
@@ -33,6 +34,16 @@ public class MainActivity extends AppCompatActivity {
     private static double goal = 2;
     private static double remaining = 2;
 
+    private View.OnClickListener ib_reset_clickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            remaining = goal;
+            populateRecommends();
+            binding.tvAmountRemaining.setText(padDouble(remaining) + " L");
+            binding.pbProgress.setProgress(0);
+            saveItems();
+        }
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
         loadItems();
         populateRecommends();
+        binding.ibReset.setOnClickListener(ib_reset_clickListener);
     }
 
     @Override
@@ -140,7 +152,6 @@ public class MainActivity extends AppCompatActivity {
             FileWriter myWriter = new FileWriter(getDataFile());
             myWriter.write(goal + " " + remaining);
             myWriter.close();
-            Toast.makeText(this, getFilesDir().toString(), Toast.LENGTH_LONG).show();
         }
         catch(IOException ioException) {
             ioException.printStackTrace();
