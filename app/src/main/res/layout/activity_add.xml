@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFcaf0f8"
     tools:context=".AddActivity">
 
     <EditText
@@ -12,8 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:ems="10"
+        android:fontFamily="sans-serif-condensed"
         android:hint="Water intake in L"
-        android:inputType="textPersonName"
+        android:inputType="none|numberDecimal"
         app:layout_constraintBottom_toTopOf="@+id/btn_add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -24,6 +26,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="48dp"
+        android:backgroundTint="@color/blue_1"
+        android:fontFamily="sans-serif-condensed-medium"
         android:text="Add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,26 +38,27 @@
         android:id="@+id/iv_500"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:src="@drawable/water_500ml"
         app:layout_constraintBottom_toBottomOf="@+id/et_500"
         app:layout_constraintStart_toStartOf="@+id/iv_250"
-        app:layout_constraintTop_toTopOf="@+id/et_500"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toTopOf="@+id/et_500" />
 
     <ImageView
         android:id="@+id/iv_750"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:src="@drawable/hydro_flask_wine_bottle_750ml"
         app:layout_constraintBottom_toBottomOf="@+id/et_750"
         app:layout_constraintStart_toStartOf="@+id/iv_500"
-        app:layout_constraintTop_toTopOf="@+id/et_750"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toTopOf="@+id/et_750" />
 
     <EditText
         android:id="@+id/et_250"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:inputType="number"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:inputType="none|number"
         android:text="0"
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="@+id/iv_250"
@@ -66,16 +71,17 @@
         android:layout_height="100dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="50dp"
+        android:src="@drawable/frsh_water_250ml"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/et_500"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:inputType="number"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:inputType="none|number"
         android:text="0"
         android:textSize="26sp"
         app:layout_constraintStart_toStartOf="@+id/et_250"
@@ -86,7 +92,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:inputType="number"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:inputType="none|number"
         android:text="0"
         android:textSize="26sp"
         app:layout_constraintStart_toStartOf="@+id/et_500"
@@ -97,6 +104,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
+        android:fontFamily="sans-serif-condensed"
         android:text="x"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/iv_250"
@@ -110,6 +118,7 @@
         android:id="@+id/tv_x2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
         android:text="x"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/iv_500"
@@ -120,10 +129,44 @@
         android:id="@+id/tv_x3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
         android:text="x"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/iv_750"
         app:layout_constraintStart_toStartOf="@+id/tv_x2"
         app:layout_constraintTop_toTopOf="@+id/iv_750" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="250ml"
+        app:layout_constraintEnd_toEndOf="@+id/iv_250"
+        app:layout_constraintStart_toStartOf="@+id/iv_250"
+        app:layout_constraintTop_toBottomOf="@+id/iv_250" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="500ml"
+        app:layout_constraintEnd_toEndOf="@+id/iv_500"
+        app:layout_constraintStart_toStartOf="@+id/iv_500"
+        app:layout_constraintTop_toBottomOf="@+id/iv_500" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="750ml"
+        app:layout_constraintEnd_toEndOf="@+id/iv_750"
+        app:layout_constraintStart_toStartOf="@+id/iv_750"
+        app:layout_constraintTop_toBottomOf="@+id/iv_750" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

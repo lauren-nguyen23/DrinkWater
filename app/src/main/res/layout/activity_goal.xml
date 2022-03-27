@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFcaf0f8"
     tools:context=".GoalActivity">
 
     <EditText
@@ -12,8 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
+        android:fontFamily="sans-serif-condensed"
         android:hint="Water in L"
-        android:inputType="textPassword"
+        android:inputType="number|numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_question" />
@@ -24,8 +26,11 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="224dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:paddingHorizontal="10dp"
         android:text="How much water do you want to drink per day?"
         android:textAlignment="center"
+        android:textColor="@color/blue_1"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.473"
@@ -37,6 +42,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:backgroundTint="@color/blue_1"
+        android:fontFamily="sans-serif-condensed-medium"
         android:text="Submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

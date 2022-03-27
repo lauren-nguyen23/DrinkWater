@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFcaf0f8"
     tools:context=".MainActivity">
 
     <ProgressBar
@@ -14,7 +15,7 @@
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="30dp"
         android:progress="0"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ib_reset"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_amount_remaining" />
 
@@ -23,8 +24,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
+        android:fontFamily="sans-serif-condensed-medium"
         android:text="Need to drink"
-        android:textSize="24sp"
+        android:textAllCaps="true"
+        android:textColor="@color/blue_1"
+        android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,6 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        android:fontFamily="sans-serif-condensed-medium"
         android:text="Recommendation"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +50,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-condensed-light"
         android:text="2 L"
+        android:textColor="@color/blue_1"
         android:textSize="30sp"
         app:layout_constraintEnd_toStartOf="@+id/tv_goal"
         app:layout_constraintHorizontal_bias="0.5"
@@ -57,7 +64,9 @@
         android:id="@+id/tv_goal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed-light"
         android:text="/ 2 L"
+        android:textColor="@color/blue_1"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/tv_amount_remaining"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,20 +78,152 @@
         android:id="@+id/tv_suggestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-condensed-light"
         android:text="You should drink:"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_rcm" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_rcm"
-        android:layout_width="409dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_suggestion">
+
+        <TextView
+            android:id="@+id/tv_rcm_750"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="2.6"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_size"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/hydro_flask_wine_bottle_750ml"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_x"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_x" />
+
+        <TextView
+            android:id="@+id/tv_x"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:text="x"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_rcm_750"
+            app:layout_constraintEnd_toStartOf="@+id/iv_size"
+            app:layout_constraintStart_toEndOf="@+id/tv_rcm_750"
+            app:layout_constraintTop_toTopOf="@+id/tv_rcm_750" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/water_500ml"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_x_500"
+            app:layout_constraintEnd_toEndOf="@+id/iv_size"
+            app:layout_constraintTop_toTopOf="@+id/tv_x_500" />
+
+        <TextView
+            android:id="@+id/tv_rcm_500"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="4"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_rcm_750"
+            app:layout_constraintEnd_toEndOf="@+id/tv_rcm_750"
+            app:layout_constraintStart_toStartOf="@+id/tv_rcm_750" />
+
+        <TextView
+            android:id="@+id/tv_x_500"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:text="x"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_rcm_500"
+            app:layout_constraintEnd_toEndOf="@+id/tv_x"
+            app:layout_constraintTop_toTopOf="@+id/tv_rcm_500" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/frsh_water_250ml"
+            app:layout_constraintBottom_toBottomOf="@+id/textView7"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/textView7" />
+
+        <TextView
+            android:id="@+id/tv_rcm_250"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30sp"
+            android:text="8"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_rcm_500"
+            app:layout_constraintEnd_toEndOf="@+id/tv_rcm_500"
+            android:fontFamily="sans-serif-condensed" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:text="x"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_rcm_250"
+            app:layout_constraintEnd_toEndOf="@+id/tv_x_500"
+            app:layout_constraintTop_toTopOf="@+id/tv_rcm_250" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="180dp"
+            android:fontFamily="sans-serif-condensed-light"
+            android:text="or"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_rcm_500"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_rcm_250"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-light"
+            android:text="or"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_rcm_750"
+            app:layout_constraintStart_toStartOf="@+id/textView8"
+            app:layout_constraintTop_toBottomOf="@+id/tv_rcm_500" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageButton
+        android:id="@+id/ib_reset"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/pb_progress"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_suggestion" />
+        app:layout_constraintTop_toTopOf="@+id/pb_progress"
+        app:srcCompat="@android:drawable/ic_menu_revert" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
