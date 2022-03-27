@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddActivity">
+
+    <EditText
+        android:id="@+id/et_estimate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:hint="Water intake in L"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/btn_add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:text="Add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_500"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_500"
+        app:layout_constraintStart_toStartOf="@+id/iv_250"
+        app:layout_constraintTop_toTopOf="@+id/et_500"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/iv_750"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_750"
+        app:layout_constraintStart_toStartOf="@+id/iv_500"
+        app:layout_constraintTop_toTopOf="@+id/et_750"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <EditText
+        android:id="@+id/et_250"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:inputType="number"
+        android:text="0"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_250"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_250" />
+
+    <ImageView
+        android:id="@+id/iv_250"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <EditText
+        android:id="@+id/et_500"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:inputType="number"
+        android:text="0"
+        android:textSize="26sp"
+        app:layout_constraintStart_toStartOf="@+id/et_250"
+        app:layout_constraintTop_toBottomOf="@+id/et_250" />
+
+    <EditText
+        android:id="@+id/et_750"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:inputType="number"
+        android:text="0"
+        android:textSize="26sp"
+        app:layout_constraintStart_toStartOf="@+id/et_500"
+        app:layout_constraintTop_toBottomOf="@+id/et_500" />
+
+    <TextView
+        android:id="@+id/tv_x1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:text="x"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_250"
+        app:layout_constraintEnd_toStartOf="@+id/iv_250"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/et_250"
+        app:layout_constraintTop_toTopOf="@+id/iv_250"
+        app:layout_constraintVertical_bias="0.486" />
+
+    <TextView
+        android:id="@+id/tv_x2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="x"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_500"
+        app:layout_constraintStart_toStartOf="@+id/tv_x1"
+        app:layout_constraintTop_toTopOf="@+id/iv_500" />
+
+    <TextView
+        android:id="@+id/tv_x3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="x"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_750"
+        app:layout_constraintStart_toStartOf="@+id/tv_x2"
+        app:layout_constraintTop_toTopOf="@+id/iv_750" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
